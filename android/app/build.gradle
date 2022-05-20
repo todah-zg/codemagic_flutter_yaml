@@ -60,10 +60,10 @@ android {
                 keyAlias System.getenv()["CM_KEY_ALIAS"]
                 keyPassword System.getenv()["CM_KEY_PASSWORD"]
             } else {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-                storePassword keystoreProperties['storePassword']
+                keyAlias 'codemagic'
+                keyPassword 'bobosmrad13'
+                storeFile 'codemagic.keystore'
+                storePassword 'bobosmrad13'
             }
         }
     }
