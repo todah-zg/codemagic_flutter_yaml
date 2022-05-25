@@ -54,3 +54,4 @@ workflows:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
         track: $GOOGLE_PLAY_TRACK
         in_app_update_priority: 0
+        submit_as_draft: true
