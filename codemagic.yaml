@@ -26,6 +26,7 @@ workflows:
           cd . && flutter packages pub get
       - name: Build APK with Flutter
         script: |
+          export LATEST_GOOGLE_PLAY_BUILD_NUMBER=$(google-play get-latest-build-number --package-name '$PACKAGE_NAME')
           cd . && flutter build appbundle --release
 # cd . && flutter build appbundle --release --build-name=1.0.0 --build-number=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks "$GOOGLE_PLAY_TRACK") + 1))
     artifacts:

@@ -27,6 +27,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 
 android {
+    def latestGooglePlayBuildNumber = Integer.valueOf(System.env.LATEST_GOOGLE_PLAY_BUILD_NUMBER ?: System.env.BUILD_NUMBER ?: 0)
+
     compileSdkVersion flutter.compileSdkVersion
 
     compileOptions {
@@ -47,8 +49,8 @@ android {
         applicationId "io.codemagic.marijan.flutteryaml"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode latestGooglePlayBuildNumber + 1
+        versionName "1.0." + String.valueOf(latestGooglePlayBuildNumber + 1)
         multiDexEnabled true
     }
 
